@@ -1,1 +1,1 @@
-# Rubrik Content Pack for vRealize LogInsight
+# Rubrik Content Pack for vRealize Log Insight
