@@ -2,7 +2,7 @@
 
 ## :hammer: Installation
 
-TBC
+See the [Quick Start Guide](docs/quick-start.md) for installation instructions.
 
 ## :blue_book: Documentation
 
