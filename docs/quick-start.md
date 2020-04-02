@@ -4,6 +4,8 @@
 
 This content pack has been tested with Rubrik CDM 5.0 and was created vRealize Log Insight version 4.3.
 
+**NOTE:** For Rubrik CDM versions 5.0 and below, please use the `rubrik_cdm_v1.1.vlcp` Content Pack version, for 5.1 and above use `rubrik_cdm_v2.0.vlcp`.
+
 ## Installation
 
 The Rubrik Content Pack for vRealize Log Insight can be installed through the following steps:
