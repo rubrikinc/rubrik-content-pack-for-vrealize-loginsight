@@ -1,0 +1,215 @@
+{
+  "name":"Rubrik CDM",
+  "namespace":"com.rubrik.devops.vrli",
+  "contentPackId":"com.rubrik.devops.vrli",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"rubrik_clustername",
+    "preContext":"clusterName=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3dnr2xg5dfojxgc3lf",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_eventname",
+    "preContext":"eventName=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45domfwwk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_eventstatus",
+    "preContext":"status=\"",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_eventtype",
+    "preContext":"eventType=\"",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_failed_location",
+    "preContext":"from ",
+    "postContext":" \\(error",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel5wg6y3boruw63q0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_failed_username",
+    "preContext":"Failure\"\\] ",
+    "postContext":" failed to authenticate",
+    "regexValue":"\\w+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel52xgzlsnzqw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_failurereason",
+    "preContext":"errorReason=\"",
+    "postContext":"\" errorRemedy",
+    "regexValue":".*",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwy5lsmvzgkyltn5xa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_objectid",
+    "preContext":"objectId=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3unfsa0000",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_objectname",
+    "preContext":"objectName=\"",
+    "postContext":"\"",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3unzqw2zi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_objecttype",
+    "preContext":"objectType=\"",
+    "postContext":"\"",
+    "regexValue":"\\w+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3uor4xazi0",
+    "constraints":null,
+    "info":null
+  }, {
+    "displayName":"rubrik_unreachable_rbs",
+    "preContext":"Rubrik Backup Service unreachable on host ",
+    "postContext":"\\. Reason",
+    "regexValue":"\\S+",
+    "internalName":"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3vnzzgkyldnbqwe3dfl5zge4y0",
+    "constraints":null,
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"Rubrik - Job History",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Total Backup Events",
+          "info":"Count of all backup events for the selected time period",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1626765700723,\"endTimeMillis\":1626852122890,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"CONTAINS\",\"value\":\"failure,success\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"backup\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Failed Backup Events",
+          "info":"Count of Failed tasks<br>",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626852100722,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"CONTAINS\",\"value\":\"failure\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"backup\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Backup Job - Event Status",
+          "info":"Event status of historic backup jobs",
+          "chartType":"pie",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"inline\",\"piepercentage\":true,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626852150659,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"backup\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"CONTAINS\",\"value\":\"success,failure,warning\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_eventstatus\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Backup Events by Object Type",
+          "info":"Groups historic backup jobs by object type",
+          "chartType":null,
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626852268366,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"CONTAINS\",\"value\":\"success,failure\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"backup\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_objecttype\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3uor4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null},{\"displayName\":\"rubrik_objecttype\",\"preContext\":\"objectType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3uor4xazi0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Failed Backup Jobs Detail",
+          "info":"Detail of failed backup jobs",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626852319458,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"CONTAINS\",\"value\":\"failure\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"backup\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_objectname\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3unzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"rubrik_objecttype\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3uor4xazi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null},{\"displayName\":\"rubrik_failurereason\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwy5lsmvzgkyltn5xa0000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null},{\"displayName\":\"rubrik_failurereason\",\"preContext\":\"errorReason=\\\"\",\"postContext\":\"\\\" errorRemedy\",\"regexValue\":\".*\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwy5lsmvzgkyltn5xa0000\",\"constraints\":null},{\"displayName\":\"rubrik_objectname\",\"preContext\":\"objectName=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3unzqw2zi0\",\"constraints\":null},{\"displayName\":\"rubrik_objecttype\",\"preContext\":\"objectType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3pmjvgky3uor4xazi0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Rubrik - Security Dashboard",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Failed Logins",
+          "info":"Provides a count of the number of failed logins over the given time period<br>",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626854637509,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"STARTS_WITH\",\"value\":\"Audit\"},{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed to authenticate\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Failed Logins by Username",
+          "info":"<span>Provides a breakdown of the user accounts failing to log in&nbsp;</span><span>over the given time period</span><br>",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626854647451,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"MATCH\",\"value\":\"Failure\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"Audit\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_failed_username\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel52xgzlsnzqw2zi0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null},{\"displayName\":\"rubrik_failed_username\",\"preContext\":\"Failure\\\"\\\\] \",\"postContext\":\" failed to authenticate\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel52xgzlsnzqw2zi0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Failed Logins Over Time",
+          "info":"<span><span><span><span><span>Provides a timer series view failed logins over the given time period<br></span></span></span><span></span></span></span>",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"trendline\":false,\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626854647451,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"text\",\"operator\":\"CONTAINS\",\"value\":\"failed to authenticate\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"STARTS_WITH\",\"value\":\"Audit\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null}]}",
+          "messageQuery":""
+        }, {
+          "name":"Failed Logins by Location",
+          "info":"<span>Provides a breakdown of the locations that failed logins are coming from</span><span>over the given time period</span><br>",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1616806249473,\"endTimeMillis\":1626854647451,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"operator\":\"MATCH\",\"value\":\"Failure\"},{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"operator\":\"CONTAINS\",\"value\":\"Audit\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_failed_location\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel5wg6y3boruw63q0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventstatus\",\"preContext\":\"status=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dtorqxi5lt\",\"constraints\":null},{\"displayName\":\"rubrik_eventtype\",\"preContext\":\"eventType=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\w+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45dupfygk000\",\"constraints\":null},{\"displayName\":\"rubrik_failed_location\",\"preContext\":\"from \",\"postContext\":\" \\\\(error\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3gmfuwyzlel5wg6y3boruw63q0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    }, {
+      "name":"Rubrik - Diagnostic",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"Hosts with unreachable Rubrik Backup Service status",
+          "info":"Hosts with unreachable Rubrik Backup Service status<br>",
+          "gridWidth":"1",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1626769325203,\"endTimeMillis\":1626855725202,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45domfwwk000\",\"operator\":\"CONTAINS\",\"value\":\"host.hostunreachable\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"rubrik_unreachable_rbs\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3vnzzgkyldnbqwe3dfl5zge4y0\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"rubrik_eventname\",\"preContext\":\"eventName=\\\"\",\"postContext\":\"\\\"\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3fozsw45domfwwk000\",\"constraints\":null},{\"displayName\":\"rubrik_unreachable_rbs\",\"preContext\":\"Rubrik Backup Service unreachable on host \",\"postContext\":\"\\\\. Reason\",\"regexValue\":\"\\\\S+\",\"internalName\":\"ibadems7mnxw2ltsovrhe2llfzsgk5tpobzs45tsnruxe5lcojuwwx3vnzzgkyldnbqwe3dfl5zge4y0\",\"constraints\":null}]}",
+          "messageQuery":""
+        } ]
+      } ]
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"Rubrik Inc",
+  "url":"https://github.com/rubrikinc/rubrik-loginsight-content-pack",
+  "contentVersion":"3.0",
+  "instructions":"<span>Setup instructions are available <a href=\"https://github.com/rubrikinc/rubrik-content-pack-for-vrealize-loginsight/blob/master/docs/quick-start.md\">here</a>.</span>",
+  "icon":"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"
+}
